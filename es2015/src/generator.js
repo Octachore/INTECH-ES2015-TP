@@ -31,6 +31,6 @@ export class Emitter {
      * le receiver est une fonction sera appellé à chaque fois qu'une nouvelle est émise
      */
     constructor(receiver) {
-        this.emit = (val) => receiver(val)
+        this.emit = function(...val) { receiver(...val) }
     }
 }
